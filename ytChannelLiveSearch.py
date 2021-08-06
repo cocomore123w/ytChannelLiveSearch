@@ -150,11 +150,7 @@ def _find_reserve_videoid(res):
 #input timestamp
 #return bool
 def free_chat(_time):
-    localtime = time.localtime()
-    localtime = time.strftime("%Y-%m-%d %I:%M:%S", localtime)
-    #print(localtime)
-    struct_time = time.strptime(localtime, "%Y-%m-%d %H:%M:%S")
-    time_stamp = int(time.mktime(struct_time))
+    time_stamp = time.time()
     diff = abs(int(_time) - int(time_stamp))
     #print(diff)
     if diff/(60*60*24) < 14:
